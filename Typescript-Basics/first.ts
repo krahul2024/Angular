@@ -91,3 +91,4 @@ class Manager extends Employee {
 
 let man = new Manager(12, 'Randy Daniels', 'Fulton Town, North Dakota, USA'); 
 console.log(man.getNameAndAddress()); 
+
