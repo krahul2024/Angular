@@ -24,3 +24,17 @@ We can create multiple applications in a single repo and deploy from the same re
 *In angular everything is a class*
 
 *if we change the prefix = app --> hotel(or any name we desire), then we need to do the same in index.html(app-root --> hotel-root) and angular.json file(prefix = app -> hotel) and then restart the shell again. We can also change the prefix to any name while creating the application using --prefix=whateverNameWeWant*
+
+
+**Component generation** 
+let's say we want to create a component called Rooms, use ``` ng generate component rooms ```,
+a new directory is created inside the app directory named rooms, all the codes related to rooms written here. Take the selector from the rooms.component.ts and feed it to app.component.html to see this component in action. 
+
+
+**Template Binding**
+* Interpolation Binding : declare a variable name in rooms.component.ts file and then use that variable name in rooms.component.html file <tag> I am using {{variableFromComp.tsFile}}</tag>, and this shows up in the application page. 
+
+* Property Binding :  <div [innerText] = "numberOfRooms"></div> <!-- innerText and others should be valid html elements -->
+
+* Event Binding : for buttons or events 
+<button (click) = "toggle()"> Toggle> </button> and this toggle function should be defined in rooms.component.ts file 
