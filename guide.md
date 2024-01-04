@@ -124,3 +124,84 @@ textColor: string = 'red';
 
 ``` 
 
+#### Pipes 
+These are used for data transformation, these don't change actual object, formatting data in the template. These allow application of various transformations to data before displaying it in the view.
+
+Certainly! Here's the list of Angular pipes without the ### heading:
+
+**DatePipe:**
+Formats a date value according to locale rules.
+```html
+{{ currentDate | date:'short' }}
+```
+
+**DecimalPipe:**
+Formats a number as text with commas.
+```html
+{{ price | number:'1.2-2' }}
+```
+
+**CurrencyPipe:**
+Formats a number as currency text.
+```html
+{{ amount | currency:'USD':'symbol':'1.2-2' }}
+```
+
+**PercentPipe:**
+Formats a number as a percentage.
+```html
+{{ ratio | percent:'1.2-2' }}
+```
+
+**UpperCasePipe:**
+Transforms text to uppercase.
+```html
+{{ text | uppercase }}
+```
+
+**LowerCasePipe:**
+Transforms text to lowercase.
+```html
+{{ text | lowercase }}
+```
+
+**SlicePipe:**
+Extracts a section of an array or string.
+```html
+{{ array | slice:1:5 }}
+```
+
+**AsyncPipe:**
+Unwraps a value from an asynchronous primitive.
+```html
+{{ asyncData | async }}
+```
+
+**JsonPipe:**
+Converts an object into a JSON-formatted string.
+```html
+{{ dataObject | json }}
+```
+
+**KeyValuePipe:**
+Transforms an object or map into an array of key-value pairs.
+```html
+<div *ngFor="let entry of dataObject | keyvalue">
+  {{ entry.key }}: {{ entry.value }}
+</div>
+```
+
+**TitleCasePipe:**
+Converts text to title case.
+```html
+{{ text | titlecase }}
+```
+
+**I18nPluralPipe:**
+Maps a numeric value to the pluralization of a string, based on locale rules.
+```html
+{{ itemCount | i18nPlural:{ '=0': 'No items', '=1': 'One item', 'other': '# items' } }}
+```
+
+
+#### Lifecycle Hooks 
