@@ -38,3 +38,8 @@ a new directory is created inside the app directory named rooms, all the codes r
 
 * Event Binding : for buttons or events 
 <button (click) = "toggle()"> Toggle> </button> and this toggle function should be defined in rooms.component.ts file 
+
+**Directives** 
+*Can change the behaviour and appearance of the DOM* 
+*Don't have templates* 
+
