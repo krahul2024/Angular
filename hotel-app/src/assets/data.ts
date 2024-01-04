@@ -27,17 +27,27 @@ export interface RoomsList {
 
 
 export const rooms: RoomsList[] = [
-    // {},
-    { roomType: 'Single', price: 50, available: true, checkInTime: new Date(), checkOutTime: new Date() },
-    { roomType: 'Double', amenities: 'Wi-Fi, TV', price: 75, available: true, checkInTime: new Date(), checkOutTime: new Date() },
-    { roomType: 'Suite', amenities: 'Wi-Fi, TV, Jacuzzi', price: 120, available: false },
-    { roomType: 'Standard', amenities: 'Wi-Fi', price: 60, available: true, checkInTime: new Date() },
-    { roomType: 'Deluxe', amenities: 'Wi-Fi, TV, Mini Bar', price: 90, available: false },
-    { roomType: 'Economy', price: 40, available: true, checkOutTime: new Date() },
-    { roomType: 'VIP', amenities: 'Wi-Fi, TV, Jacuzzi, Mini Bar', price: 150, available: true, checkInTime: new Date(), checkOutTime: new Date() },
-    { roomType: 'Penthouse', amenities: 'Wi-Fi, TV, Jacuzzi, Mini Bar, Private Pool', price: 250, available: true, checkInTime: new Date(), checkOutTime: new Date() },
-    { roomType: 'Standard', amenities: 'Wi-Fi', price: 65, available: true, checkInTime: new Date(), checkOutTime: new Date() },
+  { roomType: 'Single', price: 50, available: true, photos: 'https://webbox.imgix.net/images/owvecfmxulwbfvxm/c56a0c0d-8454-431a-9b3e-f420c72e82e3.jpg?auto=format,compress&fit=crop&crop=entropy', checkInTime: new Date('2024-01-10T14:00:00'), checkOutTime: new Date('2024-01-15T12:00:00') },
+  { roomType: 'Double', amenities: 'Wi-Fi, TV', price: 75, available: true, photos: 'https://cdn.traveltripper.io/site-assets/512_863_12597/media/2018-02-22-041437/large_DDBDB.jpg', checkInTime: new Date('2024-02-05T15:30:00'), checkOutTime: new Date('2024-02-10T11:00:00') },
+  { roomType: 'Suite', amenities: 'Wi-Fi, TV, Jacuzzi', price: 120, available: false, photos: 'https://i.insider.com/5b50aa5095d43819008b47b1?width=1000&format=jpeg&auto=webp' },
+  { roomType: 'Standard', amenities: 'Wi-Fi', price: 60, available: true, photos: 'https://www.chicagoriverhotel.com/wp-content/uploads/sites/9/2017/06/511-2BEDROOM-SUITE_CQ_WACKER_0330.jpg', checkInTime: new Date('2024-03-15T12:00:00'), checkOutTime: new Date('2024-03-20T10:00:00') },
+  { roomType: 'Single', price: 55, available: true, photos: 'https://webbox.imgix.net/images/owvecfmxulwbfvxm/c56a0c0d-8454-431a-9b3e-f420c72e82e3.jpg?auto=format,compress&fit=crop&crop=entropy', checkInTime: new Date('2024-04-01T14:30:00'), checkOutTime: new Date('2024-04-07T11:00:00') },
+  { roomType: 'Double', amenities: 'Wi-Fi, TV, Mini Bar', price: 85, available: true, checkInTime: new Date('2024-05-10T13:00:00'), checkOutTime: new Date('2024-05-15T11:30:00') },
+  { roomType: 'Suite', amenities: 'Wi-Fi, TV, Jacuzzi, Mini Bar', price: 150, available: true, checkInTime: new Date('2024-06-20T15:00:00'), checkOutTime: new Date('2024-06-25T12:30:00') },
+  { roomType: 'Standard', amenities: 'Wi-Fi', price: 65, available: true, checkInTime: new Date('2024-07-05T12:30:00'), checkOutTime: new Date('2024-07-10T10:00:00') },
+  { roomType: 'Single', price: 60, available: true, checkInTime: new Date('2024-08-15T14:30:00'), checkOutTime: new Date('2024-08-20T11:00:00') },
+  { roomType: 'Double', amenities: 'Wi-Fi, TV, Balcony', price: 90, available: true, checkInTime: new Date('2024-09-10T13:00:00'), checkOutTime: new Date('2024-09-15T10:30:00') },
+  { roomType: 'Suite', amenities: 'Wi-Fi, TV, Kitchenette', price: 180, available: true, checkInTime: new Date('2024-10-05T14:00:00'), checkOutTime: new Date('2024-10-10T12:00:00') },
+  { roomType: 'Standard', amenities: 'Wi-Fi, TV, Workstation', price: 100, available: true, checkInTime: new Date('2024-11-20T12:30:00'), checkOutTime: new Date('2024-11-25T10:00:00') },
+  { roomType: 'Single', price: 65, available: true, checkInTime: new Date('2025-01-01T12:00:00'), checkOutTime: new Date('2025-01-07T10:00:00') },
+  { roomType: 'Double', amenities: 'Wi-Fi, TV, Mini Bar, Private Pool', price: 120, available: true, checkInTime: new Date('2025-02-15T14:30:00'), checkOutTime: new Date('2025-02-20T11:30:00') },
+  { roomType: 'Suite', amenities: 'Wi-Fi, TV, Jacuzzi', price: 90, available: true, checkInTime: new Date('2025-03-10T13:00:00'), checkOutTime: new Date('2025-03-15T10:30:00') },
+  { roomType: 'Standard', amenities: 'Wi-Fi, TV, Mini Bar', price: 120, available: true, checkInTime: new Date('2025-04-05T14:00:00'), checkOutTime: new Date('2025-04-10T12:00:00') },
+  { roomType: 'Single', price: 55, available: true, checkInTime: new Date('2025-05-20T12:30:00'), checkOutTime: new Date('2025-05-25T10:00:00') },
+  { roomType: 'Double', amenities: 'Wi-Fi, TV', price: 80, available: true, checkInTime: new Date('2025-06-10T13:00:00'), checkOutTime: new Date('2025-06-15T11:30:00') },
+  { roomType: 'Suite', amenities: 'Wi-Fi, TV, Jacuzzi', price: 120, available: true, checkInTime: new Date('2025-07-05T14:00:00'), checkOutTime: new Date('2025-07-10T12:00:00') },
 ];
+
 
 export const users: User[] = [{
         name: 'John Doe',

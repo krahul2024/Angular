@@ -4,5 +4,51 @@
 	Number of Rooms : <div [innerText] = "numberOfRooms"></div>
 </div>
 
+<br> 
+
+
+<div *ngIf="!hideRooms ">
+	<h3 *ngIf = "rooms?.totalRooms"> Total Rooms : {{rooms.totalRooms}} </h3>
+	<h4 *ngIf = "rooms?.availableRooms">Available Rooms : {{rooms.availableRooms}}</h4>
+	<h4 *ngIf = "rooms?.bookedRooms">Available Rooms : {{rooms.bookedRooms}}</h4>
+</div>
+
+<br>
 <button (click) = "toggle()">{{hideRooms ? 'Show Rooms' : 'Hide Rooms'}}</button>
 
+<br>
+
+<!-- <div>{{roomsList}}</div> -->
+
+<br>
+
+<table>
+		<tr>
+			  <th>Index</th>
+			  <th>Room Type</th>
+		      <th>Amenities</th>
+		      <th>Price</th>
+		      <th>Available</th>
+		      <th>Check-In Time</th>
+		      <th>Check-Out Time</th>
+		      <th>Photos</th>
+		</tr>
+		<tr [ngClass] = "e ? 'dark-row' : 'light-row' "
+			*ngFor="let room of roomsList; let e = even; let o = odd; let i = index; "
+			>
+		  <td>{{i+1}} : {{o ? 'Even' : 'Odd'}}</td>
+	      <td>{{ room.roomType }}</td>
+	      <td>{{ room.amenities }}</td>
+	      <td>{{ room.price }}</td>
+	      <td>{{ room.available ? 'Yes' : 'No' }}</td>
+	      <td>{{ room.checkInTime | date:'short' }}</td>
+	      <td>{{ room.checkOutTime | date:'short' }}</td>
+	      <td>
+	        <img *ngIf="room.photos" 
+		        [src]="room.photos" 
+		        alt="{{ room.roomType }} Photo" 
+		        width="150"
+	        >
+	      </td>
+		</tr>
+</table>

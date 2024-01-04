@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Room, RoomsList } from './rooms'; // Room interface
+import { rooms as Rooms } from '../../assets/data';
+
+console.log(Rooms[0])
 
 @Component({
   selector: 'hotel-rooms',
@@ -8,8 +12,18 @@ import { Component, OnInit } from '@angular/core';
 export class RoomsComponent implements OnInit {
 
   hotelName = 'Meridian Hotel'; 
-  numberOfRooms = 10; 
+
+  numberOfRooms = 20; 
+
   hideRooms = false; 
+
+  rooms : Room = {
+    availableRooms : 10, 
+    bookedRooms : 5, 
+    totalRooms : 20, 
+  }
+
+  roomsList : RoomsList[] = Rooms.slice(0, 5);
 
 
   constructor() { }
@@ -20,5 +34,5 @@ export class RoomsComponent implements OnInit {
   toggle() {
     this.hideRooms = !this.hideRooms; 
   }
-
 }
+
