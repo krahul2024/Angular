@@ -1,0 +1,36 @@
+<h1>Angular Router App</h1>
+<nav>
+  <ul>
+    <li><a routerLink="/first" ariaCurrentWhenActive="page" >First Component</a></li>
+    <li><a routerLink="/second" ariaCurrentWhenActive="page">Second Component</a></li>
+  </ul>
+</nav>
+
+<ul>
+  <li><a routerLink="/crisis-list" ariaCurrentWhenActive="page" >Crisis List Page</a></li>
+  <li><a routerLink="/heroes-list" ariaCurrentWhenActive="page" >Heroes List Page</a></li>
+</ul>
+
+
+<router-outlet></router-outlet>
+
+
+<!-- 
+To identify the active route links, we can do use the following 
+
+<a routerLink="/some-link" 
+  routerLinkActive="custon-active-button-class" 
+    ariaCurrentWhenActive="page" >
+
+  This is some Link...
+</a>
+
+ariaCurrentWhenActive : takes these values -> 
+"page" -> means current page
+"step" -> used in process parts like checkout 
+"location" -> used for current location 
+"date" -> for date or time related information 
+"time" -> for time representation 
+"true" -> meaning the link is currently active 
+
+ -->
