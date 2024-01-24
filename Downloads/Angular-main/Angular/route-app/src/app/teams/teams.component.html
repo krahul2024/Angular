@@ -1,0 +1,87 @@
+<div style="padding: 10px; margin: 10px; margin-bottom: 20px;">
+    <div style="padding: 5px;">
+        <div style="font-size: large; font-weight: 300; color: blue;">List of users</div>
+    </div>
+    <app-list [users]="usersList"></app-list>
+
+    <button (click)="shareChatToTeams()"
+        style="padding: 5px; margin: 10px; border-radius: 5px; outline: none; border-width: 1px; cursor: pointer;">
+        Open Teams Chat
+    </button>
+</div>
+
+
+<!-- {{topicName | json}}
+<br>
+{{inputForm.value | json}} -->
+
+<br>
+
+<form style="padding: 5px;" #inputForm="ngForm">
+    <div class="mb-4" style="margin: 5px;">
+        <label class="text-gray-600" style="margin: 5px;">Name</label>
+        <input style="padding: 5px; border-radius: 10px; border-width: 1px; padding-left: 12px; outline: none;"
+            type="text" #name="ngModel" required name="name" [(ngModel)]="topicName" />
+        <span *ngIf="name.touched && !name.valid" class="text-rose-600 text-sm">
+            Please enter a valid name.
+        </span>
+    </div>
+
+    <button style="margin-left: 20px; cursor: pointer; padding: 5px;" (click)="updateNameAndOpenChat(name.value)">
+        Create New Teams Chat
+    </button>
+</form>
+
+<button (click)="shareToTeams()" class="border text-white p-1 rounded-lg text-sm outline-none bg-slate-800">
+    Share to Teams
+</button>
+
+
+{{userForm.value| json}}
+<br>
+<hr>
+
+{{userForm.value| json}}
+
+<br>
+
+<form class="p-4 flex flex-col gap-4" [formGroup]="userForm" (ngSubmit)="updateDynamicContent(userForm)">
+    <div formArrayName="tableRows" class="flex flex-col">
+        <div *ngFor="let row of getTableRowControls(); let i = index" [formGroupName]="i">
+            <div>
+                <label>Name:</label>
+                <input class="border outline-none p-1 m-1 rounded-lg" type="text" formControlName="name" />
+            </div>
+            <div>
+                <label>Phone:</label>
+                <input class="border outline-none p-1 m-1 rounded-lg" type="text" formControlName="phone" />
+            </div>
+            <div>
+                <label>Email:</label>
+                <input class="border outline-none p-1 m-1 rounded-lg" type="text" formControlName="email" />
+            </div>
+            <div>
+                <label>Age:</label>
+                <input class="border outline-none p-1 m-1 rounded-lg" type="text" formControlName="age" />
+            </div>
+            <button class="border outline-none p-1 m-1 rounded-lg" type="button" (click)="deleteRow(i)">Remove</button>
+        </div>
+    </div>
+    <div class="flex gap-8">
+        <button type="button" (click)="insertRow()">Add Row</button>
+        <button type="submit" (click)="updateDynamicContent(userForm)">Submit</button>
+    </div>
+
+</form>
+
+
+
+<span 
+    class="teams-share-button"
+    data-href="https://www.microsoft.com/education/products/teams"
+    [attr.data-msg-text]="embedContent" 
+    data-assign-title="Default Assignment Title"
+    data-icon-px-size="64"
+    data-preview="true"
+    >
+</span>

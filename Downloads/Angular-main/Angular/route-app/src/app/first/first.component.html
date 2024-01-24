@@ -1,0 +1,21 @@
+<h2>First Component</h2>
+
+<nav>
+  <ul>
+    <li><a routerLink="first-a">Child A</a></li>
+  </ul>
+</nav>
+
+<li> 
+  <a  routerLink="../second">Link to second page...</a>
+</li>
+
+<li class="li">
+   <a routerLink="./first-a"> Link to first A page...</a>
+</li>
+
+<li>
+  <a [routerLink]="['/first-a']">Some link to first A page...</a>
+</li>
+
+<router-outlet></router-outlet>

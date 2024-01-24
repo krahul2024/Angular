@@ -1,0 +1,40 @@
+<div *ngIf="roomsList.length > 0">
+  <table class="">
+    <tr>
+      <th>Index</th>
+      <th>Room Type</th>
+      <th>Amenities</th>
+      <th>Price</th>
+      <th>Available</th>
+      <th>Check-In Time</th>
+      <th>Check-Out Time</th>
+      <th>Rating</th>
+      <th>Photos</th>
+      <th>Select a Room</th>
+    </tr>
+    <tr [ngClass]="e ? 'dark-row' : 'light-row' "
+      *ngFor="let room of roomsList | slice : 1 : 4; let e = even; let o = odd; let i = index; " style="padding: 5px;">
+      <td style="padding : 5px">{{i+1}} : {{o ? 'Even' : 'Odd'}}</td>
+      <td style="padding : 5px">{{ room.roomType }}</td>
+      <td style="padding : 5px">{{ room.amenities | lowercase}}</td>
+      <td style="padding : 5px">{{ room.price | currency : 'EUR'}}</td>
+      <td style="padding : 5px">{{ room.available ? 'Yes' : 'No' }}</td>
+      <td style="padding : 5px">{{ room.checkInTime | date:'short' }}</td>
+      <td style="padding : 5px">{{ room.checkOutTime | date:'short' }}</td>
+      <td style="padding: 5px">{{ 4.594322 | number : '1.1-3' }}</td>
+      <td style="padding : 5px">
+        <img class="" *ngIf="room.photos" [src]="room.photos" alt="{{ room.roomType }} Photo" width="150">
+      </td>
+      <td>
+        <button (click)="selectRoom(room)">
+          Select this Room
+        </button>
+      </td>
+    </tr>
+  </table>
+
+</div>
+
+<div *ngIf="roomsList.length < 1">
+  No data available about the rooms. 
+</div>

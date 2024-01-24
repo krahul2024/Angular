@@ -1,0 +1,121 @@
+<form #registerForm="ngForm" class="h-screen">
+
+  <!-- In the input values, if we just put the ngModel, it displays the attribute and values, if we put [ngModel], then it is one way binding(meaning we will get the values from .ts file and when changing the values in form, the values in form don't change, two way binding is done when [(ngModel)], this ensures that the both way values(form and .ts file are updated simulataneously and can be seen using the below Json pipes.)) -->
+
+  <!-- In angular there are various form-input classes, ng-touched : this is when an input field is visited at least once either the class applied is ng-untouched. ng-dirty : if the values of input field are modified then it remains ng-dirty class applied otherwise ng-pristine is applied. 
+    ng-valid and ng-invalid are self expalanatory. -->
+
+
+    <!-- With #name, this points to the input element in dom, to get access to the classes associated with this input variable, we can assign this reference with ngModel : #name = "ngModel", this gives us access to the all the class values associated with the name input field, whether this input field is touched, dirty or rest of the classes.  -->
+    
+  {{ registerForm.value | json }}
+    <hr/>
+  {{userModel | json}}
+  <div class="flex items-center justify-center h-screen">
+
+  <div class="border border-gray-100 rounded-lg p-2">
+    <span class="text-2xl flex justify-center font-semibold mb-12 text-gray-600">Register</span>
+
+    <!-- Name -->
+    <div class="mb-4">
+      <label class="text-gray-600">Name</label>
+      <input 
+         class="border rounded-md p-2 px-4 outline-0 text-gray-700 w-full hover:border-slate-300"
+             type="text" #name = "ngModel" required name="name" [(ngModel)] = "userModel.name"/>
+      <span *ngIf="name.touched && !name.valid" class="text-rose-600 text-sm">
+        Please enter a valid name. 
+      </span>
+    </div>
+    
+    <!-- {{name.className}} , using this we can see all the classes which are applied on this name(#name reference) variable-->
+    <!-- {{name.className}} : this only when we don't have the syntax like #name = "ngModel" -->
+    <!-- {{name.dirty}}, this helps in validation of the form-input-fields -->
+
+    <!-- Email -->
+    <div class="mb-4">
+      <label class="text-gray-600">Email</label>
+      <input class="border rounded-md p-2 px-4 outline-0 text-gray-700 w-full hover:border-slate-300"
+             type="email" name="email" [(ngModel)] = "userModel.email"/>
+    </div>
+
+    <!-- Phone -->
+    <div class="mb-4">
+      <label class="text-gray-600">Phone</label>
+      <input class="border rounded-md p-2 px-4 outline-0 text-gray-700 w-full hover:border-slate-300"
+             type="text" name="phone" [(ngModel)] = "userModel.phone" required 
+             pattern="^[0-9]{10}$" maxlength="10" minlength="10" #phone="ngModel"
+            />
+        <span *ngIf="phone.touched && phone.invalid" class="text-rose-600 text-sm">
+          Please enter a valid phone number. 
+        </span>
+    </div>
+    <!-- {{phone.valid}} -->
+
+    <!-- Password -->
+    <div class="mb-4">
+      <label class="text-gray-600">Password</label>
+      <input class="border rounded-md p-2 px-4 outline-0 text-gray-700 w-full hover:border-slate-300"
+             type="password" name="password" [(ngModel)] = "userModel.password"/>
+    </div>
+
+    <!-- Gender and Age -->
+    <div class="flex mb-4">
+      <div class="w-1/2 pr-2">
+        <label class="text-gray-600">Gender</label>
+        <input class="border rounded-md p-2 px-4 outline-0 text-gray-700 w-full hover:border-slate-300"
+               type="text" name="gender" [(ngModel)] = "userModel.gender"/>
+      </div>
+
+      <div class="w-1/2 pl-2">
+        <label class="text-gray-600">Age</label>
+        <input class="border rounded-md p-2 px-4 outline-0 text-gray-700 w-full hover:border-slate-300"
+               type="text" name="age" [(ngModel)] = "userModel.age"/>
+      </div>
+    </div>
+
+    <!-- Address : it is a group of values -->
+    <div ngModelGroup="address" class="mb-4">
+      <div class="flex">
+        <!-- Street and City -->
+        <div class="w-1/2 pr-2">
+          <label class="text-gray-600">Street</label>
+          <input class="border rounded-md p-2 px-2 outline-0 text-gray-700 w-full hover:border-slate-300"
+                 type="text" name="street" [(ngModel)] = "userModel.address.street"/>
+        </div>
+
+        <div class="w-1/2 pl-2">
+          <label class="text-gray-600">City</label>
+          <input class="border rounded-md p-2 px-2 outline-0 text-gray-700 w-full hover:border-slate-300"
+                 type="text" name="city" [(ngModel)] = "userModel.address.city"/>
+        </div>
+      </div>
+
+      <!-- State and Postal Code -->
+      <div class="flex">
+        <div class="w-1/2 pr-2">
+          <label class="text-gray-600">State</label>
+          <input class="border rounded-md p-2 px-2 outline-0 text-gray-700 w-full hover:border-slate-300"
+                 type="text" name="state" [(ngModel)] = "userModel.address.state"/>
+        </div>
+
+        <div class="w-1/2 pl-2">
+          <label class="text-gray-600">Postal Code</label>
+          <input class="border rounded-md p-2 px-2 outline-0 text-gray-700 w-full hover:border-slate-300"
+                 type="text" name="postal-code" [(ngModel)] = "userModel.address.postalCode"/>
+        </div>
+      </div>
+    </div>
+
+    <button class="border hover:border-slate-300 text-gray-600 hover:font-semibold flex items-center justify-center w-full py-1 mt-8 rounded-lg">
+      Go
+    </button>
+
+    <div class="text-sm p-1 flex justify-center gap-2">
+      <span class="text-gray-600">Already registered? </span>
+      <a routerLink = '/login'
+      	 class="text-gray-600 hover:text-red-800 cursor-pointer">Login</a>
+    </div>
+  </div>
+
+</div>
+</form>

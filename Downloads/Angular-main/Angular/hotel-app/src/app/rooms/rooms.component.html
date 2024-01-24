@@ -1,0 +1,27 @@
+<h1>Welcome to {{hotelName}}</h1>
+
+<div class="text-lg" [hidden]="hideRooms">
+	Number of Rooms : <div [innerText]="numberOfRooms"></div>
+</div>
+
+<br>
+
+<div *ngIf="!hideRooms ">
+	<h3 *ngIf="rooms?.totalRooms"> Total Rooms : {{rooms.totalRooms}} </h3>
+	<h4 *ngIf="rooms?.availableRooms">Available Rooms : {{rooms.availableRooms}}</h4>
+	<h4 *ngIf="rooms?.bookedRooms">Available Rooms : {{rooms.bookedRooms}}</h4>
+</div>
+
+<br>
+<button (click)="toggle()">{{hideRooms ? 'Show Rooms' : 'Hide Rooms'}}</button>
+<br>
+
+<!-- <div>{{roomsList | json}}</div>  this can be used for debugging, it will show us the values right in the page. -->
+
+<br>
+
+<div *ngIf="selectedRoom">
+	{{selectedRoom | json}}
+</div>
+
+<hotel-rooms-list [roomsList]="roomsList" (selectedRoom)="selectRoom($event)"></hotel-rooms-list>
