@@ -1,6 +1,6 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {RouterModule } from '@angular/router'; 
+import { RouterModule } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -34,16 +34,16 @@ import { MarkdownModule } from 'ngx-markdown';
     HomeComponent,
     TeamsButtonComponent,
     DynamicTableComponent,
-    MdFormComponent, 
-    schemas : [CUSTOM_ELEMENTS_SCHEMA], 
+    MdFormComponent,
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [
     BrowserModule,
-    AppRoutingModule, 
-    RouterModule, 
-    FormsModule, 
-    ReactiveFormsModule, 
-    MarkdownModule, 
+    AppRoutingModule,
+    RouterModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MarkdownModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
