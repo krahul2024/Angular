@@ -18,6 +18,8 @@ import { TeamsButtonComponent } from './shared/teams-button/teams-button.compone
 import { DynamicTableComponent } from './dynamic-table/dynamic-table.component';
 import { MdFormComponent } from './md-form/md-form.component';
 import { MarkdownModule } from 'ngx-markdown';
+import { TeamsChatComponent } from './teams-chat/teams-chat.component';
+import { EmbedFormComponent } from './teams-chat/embed-form/embed-form.component';
 
 
 @NgModule({
@@ -35,6 +37,8 @@ import { MarkdownModule } from 'ngx-markdown';
     TeamsButtonComponent,
     DynamicTableComponent,
     MdFormComponent,
+    TeamsChatComponent,
+    EmbedFormComponent,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [

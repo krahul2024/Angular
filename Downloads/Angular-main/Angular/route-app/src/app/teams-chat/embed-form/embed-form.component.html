@@ -1,21 +1,20 @@
-<div class="flex h-screen justify-center items-center">
-    <!-- {{embedText.value | json }}
-    {{title | json}} -->
+<div class="flex justify-center items-center">
+  
     <form #embedForm="ngForm" >
-
+        <!-- {{embedForm.value | json }} -->
         <div class="p-2 flex flex-col gap-2">
             <span>Title </span>
-            <input class="border outline-none p-1 px-4" name="title" [(ngModel)]="title"
+            <input class="border outline-none p-1 px-4" name="title" [(ngModel)]="formData.heading"
                 />
         </div>
         <div class="p-2 flex flex-col gap-2">
             <span>Sub Title </span>
-            <input class="border outline-none p-1 px-4" name="subTitle" [(ngModel)]="subTitle"
+            <input class="border outline-none p-1 px-4" name="subTitle" [(ngModel)]="formData.subHeading"
                 />
         </div>
         <div class="p-2 flex flex-col gap-2">
             <span>Content </span>
-            <textarea class="border h-32 w-72 outline-none p-1 px-4" name="content" [(ngModel)]="content"
+            <textarea class="border h-32 w-72 outline-none p-1 px-4" name="content" [(ngModel)]="formData.body"
                 ></textarea>
         </div>
 
@@ -25,7 +24,6 @@
                 Submit
             </button>
         </div>
-        
     </form>
 </div>
 

@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { DynamicTableComponent } from './dynamic-table/dynamic-table.component';
 import { MarkdownComponent } from 'ngx-markdown';
 import { MdFormComponent } from './md-form/md-form.component';
+import { TeamsChatComponent } from './teams-chat/teams-chat.component';
 
 
 const routes: Routes = [
@@ -21,6 +22,8 @@ const routes: Routes = [
       { path: 'first-a', title: 'First A page', component: FirstAComponent },
     ]
   },
+  { path : 'teams-share', title : 'Share to Teams', component : TeamsChatComponent}
+  ,
   {
     path: 'second', component: SecondComponent, title: 'Second Page',
     children: [

@@ -1,0 +1,13 @@
+<div class="flex h-screen justify-center items-center">
+    <div class="flex flex-col gap-4">
+        <app-embed-form #embedForm (submittedForm)="onFormSubmitted($event)"></app-embed-form>
+        <span class="teams-share-button" 
+            data-href="https://medium.com/wizdm-genesys/rendering-markdown-in-angular-37750d124247"
+            [attr.data-msg-text]="embedContent"
+            data-assign-title="Default Assignment Title" 
+            data-icon-px-size="64"
+            data-preview="true">
+        </span>
+    </div>
+</div>
+
